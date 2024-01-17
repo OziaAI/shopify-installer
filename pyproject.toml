@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "shopify-authenticator"
+version = "0.1.0"
+description = "This repository hosts a webapp written in Python for authenticating Shopify users via OAuth2."
+authors = ["Lilian Schall <lilian.schall@epita.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ShopifyAPI = "^12.4.0"
+Flask = "^3.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
