@@ -1,1 +1,1 @@
-from hmac_verify import check_hmac
+from .hmac_verify import check_hmac
