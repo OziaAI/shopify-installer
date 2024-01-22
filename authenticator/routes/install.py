@@ -24,5 +24,3 @@ def install_route():
     auth_url = session.create_permission_url(scopes, redirect_url, state)
 
     return redirect(auth_url, code=302)
-
-
