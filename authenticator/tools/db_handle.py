@@ -1,13 +1,6 @@
-import os
 import psycopg2
 
-
-def fetch_env(env_name):
-    value = os.getenv(env_name)
-    if not value:
-        print(env_name + " environment variable is not set.")
-        exit(1)
-    return value
+from env_fetcher import fetch_env
 
 
 def get_db():

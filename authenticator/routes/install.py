@@ -3,7 +3,7 @@ import shopify
 import binascii
 import os
 
-from ..tools import check_hmac
+from ..tools import check_hmac, cache
 
 
 def install_route():
@@ -22,5 +22,7 @@ def install_route():
     scopes = ["read_products", "read_orders"]
 
     auth_url = session.create_permission_url(scopes, redirect_url, state)
+
+    cache.set("state:" + args["shop"], state)
 
     return redirect(auth_url, code=302)
