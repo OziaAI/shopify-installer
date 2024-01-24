@@ -11,6 +11,9 @@ ShopifyAPI = "^12.4.0"
 Flask = "^3.0.0"
 psycopg2-binary = "^2.9.9"
 
+[tool.coc-pyright]
+venvPath = "."
+venv = ".venv"
 
 [build-system]
 requires = ["poetry-core"]
