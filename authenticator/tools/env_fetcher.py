@@ -1,5 +1,6 @@
 import os
 
+
 def fetch_env(env_name):
     value = os.getenv(env_name)
     if not value:
