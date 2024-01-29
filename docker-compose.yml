@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  authenticator:
+    image: "authenticator-prod"
+    container_name: "authenticator"
+    build: "."
+    ports:
+      - "10001:8000"
+    environment:
+      - DB_NAME=authentication
+      - DB_USER=authenticator
+      - DB_PASSWORD=auth123
+      - DB_HOST=postgres
+      - DB_PORT=5432
