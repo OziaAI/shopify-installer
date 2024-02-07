@@ -1,4 +1,4 @@
-from authenticator import app
+from installer import app
 
 if __name__ == "__main__":
     app.run()

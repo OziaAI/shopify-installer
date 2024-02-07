@@ -1,14 +1,28 @@
 version: '3.9'
 services:
   authenticator:
-    image: "authenticator-prod"
-    container_name: "authenticator"
+    image: "shopify_installer:production"
+    container_name: "shopify_installer"
     build: "."
     ports:
       - "10001:8000"
     environment:
-      - DB_NAME=authentication
-      - DB_USER=authenticator
-      - DB_PASSWORD=auth123
-      - DB_HOST=postgres
+      - DB_NAME=shopify_installation
+      - DB_USER=installer
+      - DB_PASSWORD=installation123!
+      - DB_HOST=ozia_db
       - DB_PORT=5432
+      - SHOPIFY_API_KEY=${SHOPIFY_API_KEY}
+      - SHOPIFY_API_SECRET=${SHOPIFY_API_SECRET}
+      - REDIS_HOST=redis_install
+      - REDIS_PORT=6379
+  redis:
+    container_name: redis_install
+    image: redis
+    restart: always
+    ports:
+      - "10003:6379"
+
+networks:
+  proxynet:
+    name: ozia_backend

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "shopify-authenticator"
+name = "shopify-installer"
 version = "0.1.0"
 description = "This repository hosts a webapp written in Python for authenticating Shopify users via OAuth2."
 authors = ["Lilian Schall <lilian.schall@epita.fr>"]
