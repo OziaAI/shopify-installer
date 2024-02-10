@@ -2,7 +2,7 @@ version: '3.9'
 services:
   authenticator:
     image: "shopify_installer:production"
-    container_name: "shopify_installer"
+    container_name: "shopify_installer-prod"
     build: "."
     ports:
       - "10001:8000"
