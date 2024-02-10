@@ -19,6 +19,7 @@ jobs:
       - name: Deploy Shopify Installer on created context
         env:
           DB_PASSWORD: ${{ secrets.TEST_DB_PASSWORD }}
+          DB_NAME: ${{ secrets.TEST_DB_NAME }}
           DB_HOST: ${{ secrets.TEST_DB_HOST }}
           SHOPIFY_API_KEY: ${{ secrets.SHOPIFY_API_KEY }}
           SHOPIFY_API_SECRET: ${{ secrets.SHOPIFY_API_SECRET }}
