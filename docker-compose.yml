@@ -5,7 +5,7 @@ services:
     container_name: "shopify_installer-prod"
     build: "."
     ports:
-      - "10001:8000"
+      - "10003:8000"
     environment:
       - DB_NAME=shopify_installation
       - DB_USER=shopify_installer_service
@@ -23,8 +23,6 @@ services:
     container_name: redis_install
     image: redis
     restart: always
-    ports:
-      - "10003:6379"
     networks:
       - redis_network
 
