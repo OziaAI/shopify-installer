@@ -7,7 +7,7 @@ services:
     ports:
       - "10003:8000"
     environment:
-      - DB_NAME=shopify_installation
+      - DB_NAME=${DB_NAME}
       - DB_USER=shopify_installer_service
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=${DB_HOST}
