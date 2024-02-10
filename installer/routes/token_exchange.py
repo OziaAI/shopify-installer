@@ -27,9 +27,9 @@ def exchange_token():
     db = get_db()
     with db.cursor() as cur:
         cur.execute(
-            "INSERT INTO access (token, shop)" "VALUES (%s, %s)",
+            "INSERT INTO shopify_access (access_token, shop)" "VALUES (%s, %s)",
             (access_token, args["shop"]),
         )
         db.commit()
 
-    return redirect("https://login.ozia.ai")
+    return redirect("https://ozia.ai")
