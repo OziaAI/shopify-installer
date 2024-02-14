@@ -27,8 +27,8 @@ def exchange_token():
     db = get_db()
     with db.cursor() as cur:
         cur.execute(
-            "INSERT INTO shopify_access (access_token, shop)" "VALUES (%s, %s)",
-            (access_token, args["shop"]),
+            "INSERT INTO shopify_access (shop_name, access_token)" "VALUES (%s, %s)",
+            (args["shop"], access_token),
         )
         db.commit()
 
