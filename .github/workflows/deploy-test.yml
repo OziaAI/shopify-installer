@@ -3,6 +3,8 @@ name: "Deploy Shopify Installer on test server"
 on:
   push:
     branches: [ dev ]
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
