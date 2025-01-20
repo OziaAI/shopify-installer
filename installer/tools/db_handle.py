@@ -5,6 +5,9 @@ from .env_fetcher import fetch_env
 
 
 def get_db():
+    """
+    Get the database connection.
+    """
     db_host = fetch_env("DB_HOST")
     db_name = fetch_env("DB_NAME")
     db_user = fetch_env("DB_USER")

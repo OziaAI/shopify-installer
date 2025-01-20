@@ -5,6 +5,9 @@ from ..tools import get_db, cache, logger
 
 
 def exchange_token():
+    """
+    Exchange the temporary token for a permanent token
+    """
     args = request.args
     if not args["hmac"] or not args["state"] or not args["shop"]:
         logger.info("Request is missing crucial parameters")

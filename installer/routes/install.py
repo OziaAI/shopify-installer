@@ -7,6 +7,11 @@ from ..tools import check_hmac, cache, logger
 
 
 def install_route():
+    """
+    This route is used to install the app on the shopify store.
+    It will redirect the user to the shopify permission page in order to grab 
+    a temporary token that later will be exchanged for a permanent token.
+    """
     args = request.args
     if not args["hmac"]:
         abort(code=400)
