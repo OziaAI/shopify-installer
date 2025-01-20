@@ -5,6 +5,9 @@ from ..tools import get_db, cache, logger
 
 
 def exchange_token():
+    """
+    Exchange the temporary token for a permanent token
+    """
     args = request.args
     if not args["hmac"] or not args["state"] or not args["shop"]:
         logger.info("Request is missing crucial parameters")
@@ -27,9 +30,9 @@ def exchange_token():
     db = get_db()
     with db.cursor() as cur:
         cur.execute(
-            "INSERT INTO access (token, shop)" "VALUES (%s, %s)",
-            (access_token, args["shop"]),
+            "INSERT INTO shopify_access (shop_name, access_token)" "VALUES (%s, %s)",
+            (args["shop"], access_token),
         )
         db.commit()
 
-    return redirect("https://login.ozia.ai")
+    return redirect("https://ozia.ai")
